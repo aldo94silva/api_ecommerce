@@ -20,6 +20,7 @@ public class CategoryService {
         List<Category> result = categoryRepositories.findAll();
         List<CategoryDTO> list = result.stream().map(x->new CategoryDTO(x)).toList();
                 return list;
+                //teste
 }
     }
 
