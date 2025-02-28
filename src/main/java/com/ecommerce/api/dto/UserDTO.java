@@ -4,10 +4,9 @@ import jakarta.validation.constraints.*;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.util.List;
 
 @Data
-public class UserDto {
+public class UserDTO {
     private Long id;
 
     @Size(min = 3, max = 80, message = "Nome deve ter entre 3 e 80 caracteres")

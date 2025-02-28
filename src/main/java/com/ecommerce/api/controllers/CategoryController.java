@@ -5,14 +5,12 @@ import com.ecommerce.api.entities.Category;
 import com.ecommerce.api.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/category")
+@RequestMapping("/api/category")
 public class CategoryController {
 
     @Autowired
@@ -20,9 +18,9 @@ public class CategoryController {
 
     @GetMapping
     public ResponseEntity<List<CategoryDTO>> getAllCategories() {
-        List<CategoryDTO> list = categoryService.getAllCategories();
+        List<CategoryDTO> list = categoryService.findAllCategories();
         return ResponseEntity.ok(list);
-
     }
+
 
 }

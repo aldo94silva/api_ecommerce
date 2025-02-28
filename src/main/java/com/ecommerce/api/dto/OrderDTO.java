@@ -5,6 +5,7 @@ import jakarta.validation.constraints.*;
 import lombok.Data;
 
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -14,7 +15,7 @@ public class OrderDTO {
 
     @NotNull(message = "Data de criação é obrigatório")
     @PastOrPresent(message = "a data do pedido não pode ser no futuro")
-    private Instant moment;
+    private LocalDateTime moment;
 
     @NotNull(message = "Status é obrigatório")
     @Pattern(regexp = "(WAITING_PAYMENT|PAID|SHIPPED|DELIVERED|CANCELLED)", message = "Status inválido")

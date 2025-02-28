@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -15,8 +16,7 @@ public class Paymant {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(columnDefinition = "TIMESTAMP WITH TIME ZONE")
-    private Instant moment;
+    private LocalDateTime moment;
 
     @OneToOne
     @MapsId

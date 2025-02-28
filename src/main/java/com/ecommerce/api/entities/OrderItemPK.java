@@ -15,6 +15,6 @@ public class OrderItemPK {
     private Order order;
 
     @ManyToOne
-    @JoinColumn(name = "product_id")
-    private Products product;
+    @JoinColumn(name = "products_id")
+    private Product product;
 }

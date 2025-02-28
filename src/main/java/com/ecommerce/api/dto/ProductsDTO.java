@@ -1,13 +1,14 @@
 package com.ecommerce.api.dto;
 
+import com.ecommerce.api.entities.Category;
 import jakarta.validation.constraints.*;
 import lombok.Data;
 
 import java.util.List;
+import java.util.Set;
 
 @Data
 public class ProductsDTO {
-
     private Long id;
 
     @Size(min = 3, max = 80, message = "Nome deve ter entre 3 e 80 caracteres")
@@ -28,4 +29,15 @@ public class ProductsDTO {
     @NotEmpty(message = "É obrigatório selecionar pelo menos uma categoria")
     private List<CategoryDTO> categories = new java.util.ArrayList<>();
 
+    public ProductsDTO(String name, String description, Long id, Double price, String imgURL, List<CategoryDTO> categories) {
+        this.name = name;
+        this.description = description;
+        this.id = id;
+        this.price = price;
+        this.imgURL = imgURL;
+        this.categories = categories;
+    }
+
+    public ProductsDTO() { }
 }
+
